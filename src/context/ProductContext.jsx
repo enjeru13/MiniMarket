@@ -21,9 +21,14 @@ export function ProductProvider({ children }) {
     const [products, setProducts] = useState([])
 
     const getProducts = async () => {
-            const res = await getProductsRequest()
-        setProducts(res.data)
-    }
+      try {
+        const res = await getProductsRequest()
+      setProducts(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+      
+    };
 
     const deleteProduct = async (id) => {
         try {

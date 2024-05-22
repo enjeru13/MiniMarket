@@ -21,13 +21,14 @@ export function CategoryProvider({ children }) {
     const [categories, setCategories] = useState([])
 
     const getCategories = async () => {
-            try {
-                const res = await getCategoriesRequest()
-                setCategories(res.data)
-            } catch (error) {
-                console.log(error)
-            }
-    }
+      try {
+        const res = await getCategoriesRequest()
+      setCategories(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+      
+    };
 
     const deleteCategory = async (id) => {
         try {
@@ -39,9 +40,9 @@ export function CategoryProvider({ children }) {
         
     }
 
-    const createCategory = async (task) => {
+    const createCategory = async (category) => {
         try {
-          const res = await createCategoryRequest(task);
+          const res = await createCategoryRequest(category);
           console.log(res.data);
         } catch (error) {
           console.log(error);

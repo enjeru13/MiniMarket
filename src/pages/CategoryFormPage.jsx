@@ -6,7 +6,7 @@ import { useEffect } from "react"
 
 function CategoryFormPage() {
 
-  const { register, handleSubmit, setValue } = useForm()
+  const { register, handleSubmit } = useForm()
   const { createCategory, getCategory } = useCategories()
   const navigate = useNavigate()
   const params = useParams()
@@ -16,6 +16,7 @@ function CategoryFormPage() {
         getCategory(params.id)
       }
   }, [])
+  
 
   const onSubmit = handleSubmit((data) => {
     createCategory(data)

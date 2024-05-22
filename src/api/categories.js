@@ -9,10 +9,3 @@ export const createCategoryRequest = (category) => axios.post('/categories', cat
 export const updateCategoryRequest = (category) => axios.put(`/categories/${category._id}`, category)
 
 export const deleteCategoryRequest = (id) => axios.delete(`/categories/${id}`)
-
-
-
-
-
-
-
